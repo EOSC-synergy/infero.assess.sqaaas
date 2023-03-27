@@ -15,48 +15,48 @@ sqa_criteria:
     repos:
       github.com/ecmwf-projects/infero git:
         commands:
-        - /usr/bin/env sh .sqa/script.hasty-carmine-tarantula.sh
-        container: qc.acc_crabby-wisteria-burmese
+        - /usr/bin/env sh .sqa/script.skanky-salmon-starfish.sh
+        container: qc.acc_bluesy-cinnabar-gorilla
   QC.Doc:
     repos:
       github.com/ecmwf-projects/infero find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.thirsty-cerulean-beagle.sh
-        container: qc.doc_cloudy-platinum-fly
+        - /usr/bin/env sh .sqa/script.queasy-periwinkle-reindeer.sh
+        container: qc.doc_silly-firebrick-ocelot
       github.com/ecmwf-projects/infero git:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-chocolate-malamute.sh
-        container: qc.doc_crappy-viridian-donkey
+        - /usr/bin/env sh .sqa/script.tacky-champagne-leopard.sh
+        container: qc.doc_tasty-purple-shark
       github.com/ecmwf-projects/infero markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.chummy-wheat-dane.sh
-        container: qc.doc_gloppy-violet-barnacle
+        - /usr/bin/env sh .sqa/script.jumpy-cinnamon-retriever.sh
+        container: qc.doc_pasty-rust-stingray
       github.com/ecmwf-projects/infero restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.pasty-cerulean-wasp.sh
-        container: qc.doc_dorky-dandelion-owl
+        - /usr/bin/env sh .sqa/script.lanky-orchid-caiman.sh
+        container: qc.doc_grumpy-cinnamon-ladybird
   QC.Lic:
     repos:
       github.com/ecmwf-projects/infero licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-sangria-tortoise.sh
-        container: qc.lic_breezy-bronze-barnacle
+        - /usr/bin/env sh .sqa/script.stinky-asparagus-crane.sh
+        container: qc.lic_droopy-platinum-gorilla
   QC.Sec:
     repos:
       github.com/ecmwf-projects/infero bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-corn-avocet.sh
-        container: qc.sec_wiggy-scarlet-peccary
+        - /usr/bin/env sh .sqa/script.skimpy-olive-ragdoll.sh
+        container: qc.sec_wiggy-orange-armadillo
   QC.Sty:
     repos:
       github.com/ecmwf-projects/infero flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-tan-stingray.sh
-        container: qc.sty_dorky-xanthic-tapir
+        - /usr/bin/env sh .sqa/script.seedy-green-ferret.sh
+        container: qc.sty_boozy-aqua-frog
   QC.Ver:
     repos:
       github.com/ecmwf-projects/infero get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.randy-tangerine-zebra.sh
-        container: qc.ver_smelly-heliotrope-kingfisher
+        - /usr/bin/env sh .sqa/script.flabby-linen-burmese.sh
+        container: qc.ver_beady-sapphire-chinook
 timeout: 5400
