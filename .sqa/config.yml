@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.9
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/ecmwf-projects/infero:
+      branch: master
+      repo: https://github.com/ecmwf-projects/infero
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/ecmwf-projects/infero git:
+        commands:
+        - /usr/bin/env sh .sqa/script.messy-ivory-shrew.sh
+        container: qc.acc_pretty-puce-dragon
+  QC.Doc:
+    repos:
+      github.com/ecmwf-projects/infero find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.droopy-magnolia-cuttlefish.sh
+        container: qc.doc_woozy-sapphire-moorhen
+      github.com/ecmwf-projects/infero git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snappy-copper-dodo.sh
+        container: qc.doc_gloppy-russet-tetra
+      github.com/ecmwf-projects/infero markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.muggy-saffron-skunk.sh
+        container: qc.doc_silly-wheat-wallaby
+      github.com/ecmwf-projects/infero restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.queasy-salmon-cockroach.sh
+        container: qc.doc_grumpy-rose-cassowary
+  QC.Lic:
+    repos:
+      github.com/ecmwf-projects/infero licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-pink-axolotl.sh
+        container: qc.lic_boozy-yellow-horse
+  QC.Sec:
+    repos:
+      github.com/ecmwf-projects/infero bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.paltry-black-balinese.sh
+        container: qc.sec_cloudy-olive-penguin
+  QC.Sty:
+    repos:
+      github.com/ecmwf-projects/infero flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.scummy-corn-baboon.sh
+        container: qc.sty_geeky-wisteria-shrew
+  QC.Ver:
+    repos:
+      github.com/ecmwf-projects/infero get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.stinky-burgundy-hamster.sh
+        container: qc.ver_randy-fuchsia-hare
+timeout: 5400
